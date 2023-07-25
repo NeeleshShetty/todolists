@@ -9,7 +9,7 @@ const port = 8960;
 //setting up ejs
 app.set("view engine", "ejs");
 app.set("views", "./views");
-
+app.use(express.urlencoded());
 const todo = [
   {
     description: "What to do today?",
@@ -35,6 +35,15 @@ app.get("/", function (req, res) {
     TODO: todo,
   });
 });
+
+// add a todo list
+app.post("/add_todo", function (req, res) {
+  todo.push(req.body);
+  return res.redirect("back");
+});
+
+//delete a todo list
+app.post("/")
 
 app.listen(port, function (err) {
   if (err) {

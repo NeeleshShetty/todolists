@@ -5,6 +5,45 @@
   </head>
   <body>
     <h1>TODO LIST</h1>
-    
+    <!-- first part -->
+    <div>
+      <form action="/add_todo" method="post">
+        <div>
+          <label for="description">Description</label>
+          <input
+            type="text"
+            id="description"
+            name="description"
+            placeholder="Description"
+            required
+          />
+        </div>
+        <div>
+          <label for="category">Category</label>
+          <select name="category" id="category">
+            <option value="personal">Personal</option>
+            <option value="school">School</option>
+            <option value="work">Work</option>
+          </select>
+        </div>
+        <div>
+          <label for="date">Date</label>
+          <input type="date" id="date" name="date" />
+        </div>
+        <button type="submit">ADD TASK</button>
+      </form>
+    </div>
+
+    <!-- Second Part -->
+    <div>
+      <ul>
+        <% for (let i of TODO) { %>
+        <li>
+          <input type="checkbox" />
+          <%= i.description %> <br /><%= i.category %> &emsp; <%=i.date %>
+        </li>
+        <% } %>
+      </ul>
+    </div>
   </body>
 </html>
