@@ -9,7 +9,15 @@ const port = 8960;
 //setting up ejs
 app.set("view engine", "ejs");
 app.set("views", "./views");
+
+//middleware
 app.use(express.urlencoded());
+
+//database
+
+const db = require("./config/mongoose");
+const TODO = require("./models/todolist");
+
 const todo = [
   {
     description: "What to do today?",
@@ -42,8 +50,8 @@ app.post("/add_todo", function (req, res) {
   return res.redirect("back");
 });
 
-//delete a todo list
-app.post("/")
+// //delete a todo list
+// app.post("/");
 
 app.listen(port, function (err) {
   if (err) {
