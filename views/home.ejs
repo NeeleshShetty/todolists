@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <title><%= title %>></title>
+    <link rel="stylesheet" href="../assests/css/home.css" />
   </head>
   <body>
     <h1>TODO LIST</h1>
@@ -11,6 +12,7 @@
         <div>
           <label for="description">Description</label>
           <input
+            id="desc"
             type="text"
             id="description"
             name="description"
@@ -39,7 +41,9 @@
       <ul>
         <% for (let i of TODO) { %>
         <li>
-          <input type="checkbox" />
+          <a href="/delete-todo/?_id=<%= i._id %>"
+            ><button type="button">DELETE</button></a
+          >
           <%= i.description %> <br /><%= i.category %> &emsp; <%=i.date %>
         </li>
         <% } %>

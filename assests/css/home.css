@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  background-color: black;
+}
+
+/* description */
+#desc {
+  width: 100px;
+  height: 100px;
+}
