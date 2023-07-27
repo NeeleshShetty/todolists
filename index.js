@@ -9,6 +9,9 @@ const port = 8650;
 
 const db = require("./config/mongoose");
 
+//static files
+app.use(express.static("assests"));
+
 //setting up ejs
 app.set("view engine", "ejs");
 app.set("views", "./views");
@@ -36,9 +39,6 @@ const todo = [
 
 //routes access
 app.use("/", require("./routes"));
-
-//static files 
-app.use(express.static('assets'));
 
 app.listen(port, function (err) {
   if (err) {

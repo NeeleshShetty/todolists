@@ -1,10 +1,20 @@
 body {
   margin: 0;
-  background-color: black;
+  /* background-color: black; */
+  background-color: aqua;
+  text-align: center;
 }
 
 /* description */
-#desc {
-  width: 100px;
-  height: 100px;
+h1 {
+  color: red;
 }
+
+#desc {
+  border: 0px;
+  width: 30vh;
+  height: 5vh;
+}
+
+
+

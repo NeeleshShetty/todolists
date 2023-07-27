@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title><%= title %>></title>
-    <link rel="stylesheet" href="../assests/css/home.css" />
+    <link rel="stylesheet" href="/css/home.css" />
   </head>
   <body>
     <h1>TODO LIST</h1>
@@ -41,11 +41,11 @@
       <ul>
         <% for (let i of TODO) { %>
         <li>
-          <a href="/delete-todo/?_id=<%= i._id %>"
-            ><button type="button">DELETE</button></a
-          >
           <%= i.description %> <br /><%= i.category %> &emsp; <%=i.date %>
         </li>
+        <a href="/delete-todo/?_id=<%= i._id %>"
+          ><button type="button">DELETE</button></a
+        >
         <% } %>
       </ul>
     </div>
